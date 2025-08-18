@@ -8,6 +8,7 @@ on:
 jobs:
   create-pr:
     runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/main' # Don't run on main branch
     steps:
       - uses: actions/checkout@v3
 
