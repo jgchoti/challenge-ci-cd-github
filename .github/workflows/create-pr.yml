@@ -3,19 +3,22 @@ name: Auto PR
 on:
   push:
     branches:
-      - " * "
+      - "**"
+      - "!main"
 
 jobs:
   create-pr:
     runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v7.0.8
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Auto-update"
-          branch: auto-pr-branch
-          title: "Auto PR from main branch"
-          body: "This PR was automatically created from any branches commits."
+          token: ${{ secrets.PAT_TOKEN }}
+          title: "Auto PR: ${{ github.ref_name }} → main"
+          body: "Auto PR from branch `${{ github.ref_name }}`"
+          base: main
