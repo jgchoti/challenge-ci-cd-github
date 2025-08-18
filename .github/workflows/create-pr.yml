@@ -3,7 +3,7 @@ name: Auto PR
 on:
   push:
     branches:
-      - main
+      - " * "
 
 jobs:
   create-pr:
@@ -11,12 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Create a pull request for your changes
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Auto-update from main"
+          commit-message: "Auto-update"
           branch: auto-pr-branch
           title: "Auto PR from main branch"
-          body: "This PR was automatically created from main branch commits."
+          body: "This PR was automatically created from any branches commits."
