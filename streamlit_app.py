@@ -13,8 +13,7 @@ page_title = "Dev Environment"
 st.set_page_config(page_title=page_title, layout="wide")
 
 def get_environment():
-    print(os.getenv('ENVIRONMENT').lower())
-    return os.getenv('ENVIRONMENT', 'dev').lower()
+    return os.getenv('ENVIRONMENT', 'prod').lower()
 
 def set_environment_styling(env: str, config_path=".streamlit/config.toml"):
     with open(config_path, "rb") as f:
@@ -25,8 +24,6 @@ def set_environment_styling(env: str, config_path=".streamlit/config.toml"):
         raise ValueError(f"No config found for environment: {env}")
 
     st.info(f"ℹ️ Using configuration for {env} environment")
-    print(env_config)
-    print(env)
     st.markdown(f"""
     <style>
     .main-header {{
