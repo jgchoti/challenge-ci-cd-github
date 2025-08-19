@@ -1,6 +1,5 @@
 # 🐾 PetConnect CI/CD Dashboard
 
-[![CI Pipeline](https://github.com/jgchoti/challenge-ci-cd-github/actions/workflows/ci.yml/badge.svg)](https://github.com/jgchoti/challenge-ci-cd-github/actions/workflows/ci.yml)
 [![CD Pipeline](https://github.com/jgchoti/challenge-ci-cd-github/actions/workflows/cd.yml/badge.svg)](https://github.com/jgchoti/challenge-ci-cd-github/actions/workflows/cd.yml)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -22,25 +21,53 @@ This project demonstrates DevOps practices by combining:
 - **Automated CI/CD Pipeline**: automated checks including pytest, security scanning, and deployment
 - **Interactive Dashboard**: Filter, search, and browse adoptable pets with images
 
-## 🏗️ System Architecture
+## 🎯 Learning Outcomes
 
-![System Architecture](assets/diagram_cicd.png)
+This project demonstrates mastery of:
+
+### Data Engineering
+
+- **GitFlow Workflow**: Feature branches, environment promotion, GitHub Actions
+- **Web Scraping**: Complex authentication and rate limiting
+- **Data Transformation**: CSV to pandas DataFrame conversion
+- **Image Processing**: URL conversion
+
+---
 
 ## 🔄 CI/CD Pipeline Flow
 
+![System Architecture](assets/diagram_cicd.png)
+
 ### Continuous Integration (CI)
 
-**Triggers**: Pull requests to `main`, pushes to `dev`/`qa`
+**Triggers:** Auto-created pull requests from any branch push
+
+```yaml
+# CI runs on PR events (open, reopen, synchronize)
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches: [ main ]
+
+Jobs:
+├── 🧹 Code Linting (flake8)
+└──🧪 Python Testing
+```
 
 ### Continuous Deployment (CD)
 
-**Environment Strategy**: GitFlow with protection rules
+**Triggers:** Merge to main branch (after PR approval)
 
-| Branch | Environment | Deployment | Approval Required |
-| ------ | ----------- | ---------- | ----------------- |
-| `dev`  | Development | Automatic  | ❌ No             |
-| `qa`   | QA/Staging  | Automatic  | ❌ No             |
-| `main` | Production  | Automatic  | ✅ **Manual**     |
+```yaml
+# CD runs only on direct pushes to main
+on:
+push:
+branches: [ main ]
+Jobs:
+├── 🚀 Deploy to Production
+└── 📊 Deployment Summary
+
+```
 
 ## 🧪 Testing Strategy
 
@@ -147,24 +174,12 @@ _white/Red-themed production environment with live data_
 _GitHub Actions CI pipeline with all checks passing_
 
 ![CD Pipeline](assets/Screenshot_cd.png)
-_Multi-environment deployment workflow_
+_Deployment workflow_
 
 ### Manual Approval Gate
 
 ![Auto PR](assets/Screenshot_pr.png)
 _Automated PR creation for pushes to any branch except main_
-
-## 🎯 Learning Outcomes
-
-This project demonstrates mastery of:
-
-### Data Engineering
-
-- **GitFlow Workflow**: Feature branches, environment promotion
-- **Web Scraping**: Complex authentication and rate limiting
-- **Data Transformation**: JSON to pandas DataFrame conversion
-- **Image Processing**: URL conversion and CDN optimization
-- **Caching Strategy**: Performance optimization with TTL
 
 ## 🙏 Acknowledgments
 
@@ -175,8 +190,6 @@ This project demonstrates mastery of:
 - **[BeCode](https://becode.org/)** - Data/Ai training
 
 ---
-
-**🚀 Built with ❤️ for the BeCode Class Challenge - Demonstrating Production-Ready CI/CD Practices**
 
 [![Deploy to Production](https://img.shields.io/badge/Deploy-Production-red?style=for-the-badge&logo=github-actions)](https://github.com/jgchoti/challenge-ci-cd-github/actions)
 [![View Live Demo](https://img.shields.io/badge/View-Live%20Demo-blue?style=for-the-badge&logo=streamlit)](https://pet-adoption-be.streamlit.app/)
