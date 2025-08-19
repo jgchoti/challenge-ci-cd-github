@@ -41,7 +41,6 @@ class TestScraperUnit:
         """Test array field processing"""
         scraper = Scraper()
         
-    
         assert scraper._process_array_field(['small', 'medium']) == 'small, medium'
         assert scraper._process_array_field('large') == 'large'
         assert scraper._process_array_field([]) == ''
