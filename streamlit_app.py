@@ -89,7 +89,6 @@ def set_environment_styling(env: str, config_path=".streamlit/config.toml"):
     
 @st.cache_data(ttl=300)  
 def load_pet_data():
-    """Load pet data from CSV file or run scraper if needed"""
     csv_file = "petconnect_pets.csv"
     
     if os.path.exists(csv_file):

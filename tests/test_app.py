@@ -2,7 +2,7 @@ import pytest
 import pandas as pd
 import os
 import sys
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import patch
 from streamlit_app import load_pet_data
 from app.scraper import Scraper
 
