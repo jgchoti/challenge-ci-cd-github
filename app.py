@@ -3,8 +3,6 @@ import pandas as pd
 import json
 import os
 from datetime import datetime
-import sys
-import subprocess
 import logging
 from app.scraper import Scraper
 import tomllib
@@ -201,7 +199,7 @@ def create_analytics_dashboard(df):
                     values=size_counts.values,
                     names=size_counts.index,
                     title="Distribution by Size",
-                    color_discrete_sequence=['#FF6B35', '#F7931E', '#FFD23F', '#06FFA5']
+                    
                 )
                 fig_pie.update_layout(height=400)
                 st.plotly_chart(fig_pie, use_container_width=True)
@@ -214,10 +212,8 @@ def create_analytics_dashboard(df):
                     x=gender_counts.index,
                     y=gender_counts.values,
                     title="Distribution by Gender",
-                    color=gender_counts.values,
-                    color_continuous_scale='Viridis'
                 )
-                fig_bar.update_layout(height=400, showlegend=False)
+                fig_bar.update_layout(height=400, showlegend=False )
                 st.plotly_chart(fig_bar, use_container_width=True)
 
 def display_pet_gallery(df):
