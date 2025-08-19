@@ -1,3 +1,20 @@
-[theme]
-primaryColor = "#F63366"
-backgroundColor = "#68be9f"
+[dev]
+title = "🔧 PetConnect Dashboard"
+background_color = "#d4edda"
+text_color = "#155724"
+header_color = "#28a745"
+page_icon = "🐾"
+
+[qa]
+title = "🧪 PetConnect Dashboard"
+background_color = "#fff3cd"
+text_color = "#856404"
+header_color = "#ffc107"
+page_icon = "🐾"
+
+[prod]
+title = "🚀 PetConnect Dashboard"
+background_color = "#f8d7da"
+text_color = "#721c24"
+header_color = "#dc3545"
+page_icon = "🐾"
