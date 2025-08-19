@@ -23,7 +23,9 @@ def set_environment_styling(env: str, config_path=".streamlit/config.toml"):
     if not env_config:
         raise ValueError(f"No config found for environment: {env}")
 
-    st.info(f"ℹ️ Using configuration for {env} environment")
+    
+    if env != 'prod':
+        st.info(f"ℹ️ Using configuration for {env} environment")
     st.markdown(f"""
     <style>
     .main-header {{
@@ -306,7 +308,8 @@ def main():
     
     # Sidebar
     with st.sidebar:
-        st.markdown(f"""
+        if env != 'prod':
+            st.markdown(f"""
         <div class="environment-badge">
             {env.upper()} Environment
         </div>
@@ -314,8 +317,6 @@ def main():
         
         st.markdown("### 🌍 System Info")
         st.markdown(f"""
-        - **Environment:** {env.upper()}
-        - **Version:** {os.getenv('APP_VERSION', 'dev')}
         - **Updated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
         """)
         
