@@ -91,7 +91,7 @@ class Scraper:
 
             if response.status_code == 200:
                 data = response.json()
-                print(f"✅ Successfully received data")
+                print("✅ Successfully received data")
                 if "dataItems" in data:
                     print(f"Found {len(data['dataItems'])} items")
                     if "totalCount" in data:
@@ -173,7 +173,6 @@ class Scraper:
                     image_info, rest = url_part.split("/", 1)
 
                     if "#" in rest:
-                        filename = rest.split("#")[0]
                         params = rest.split("#")[1] if "#" in rest else ""
                         width = 800
                         height = 600
@@ -184,7 +183,6 @@ class Scraper:
                             height = int(params.split("originHeight=")[1].split("&")[0])
 
                     else:
-                        filename = rest
                         width = 800
                         height = 600
                     converted_url = f"https://static.wixstatic.com/media/{image_info}/v1/fit/w_{width},h_{height},q_90,enc_avif,quality_auto/{image_info}"

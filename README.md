@@ -128,31 +128,31 @@ streamlit run streamlit_app.py
 
 ### Development Environment
 
-![Dev Environment](screenshots/dev-environment.png)
+![Dev Environment](assets/Screenshot_dev.png)
 _Green-themed development environment with debug information_
 
 ### QA Environment
 
-![QA Environment](screenshots/qa-environment.png)
+![QA Environment](assets/Screenshot_qa.png)
 _Yellow-themed QA environment for testing validation_
 
 ### Production Environment
 
-![Prod Environment](screenshots/prod-environment.png)
-_Red-themed production environment with live data_
+![Prod Environment](assets/Screenshot_prod.png)
+_white/Red-themed production environment with live data_
 
 ### CI/CD Pipeline
 
 ![CI Pipeline](screenshots/ci-pipeline.png)
 _GitHub Actions CI pipeline with all checks passing_
 
-![CD Pipeline](screenshots/cd-pipeline.png)
+![CD Pipeline](assets/Screenshot_cd.png)
 _Multi-environment deployment workflow_
 
 ### Manual Approval Gate
 
-![Manual Approval](screenshots/manual-approval.png)
-_Production deployment requiring manual approval_
+![Auto PR](assets/Screenshot_pr.png)
+_Automated PR creation for pushes to any branch except main_
 
 ## 🎯 Learning Outcomes
 

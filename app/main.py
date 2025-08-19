@@ -11,7 +11,7 @@ def main():
             scraper.save_to_csv()
 
             print(f"\n✅ Successfully scraped {len(pets)} pets!")
-            print(f"📁 Data saved to:")
+            print("📁 Data saved to:")
             print("   - petconnect_pets.csv")
 
         else:
