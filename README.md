@@ -9,7 +9,7 @@ A **real-time pet adoption dashboard** that scrapes data from PetConnect.be, sho
 
 ## 🎯 Project Overview
 
-This project demonstrates advanced DevOps practices by combining:
+This project demonstrates DevOps practices by combining:
 
 - **🔬 Data Engineering**: Web scraping with authentication bypass for Wix-based APIs
 - **📊 Data Visualization**: Interactive Streamlit dashboard with environment-specific theming
@@ -18,7 +18,7 @@ This project demonstrates advanced DevOps practices by combining:
 ### 🌟 Key Features
 
 - **Real-time Pet Data Scraping**: Bypasses Wix authentication to extract pet adoption data
-- **Multi-Environment Architecture**: Dev (green) → QA (yellow) → Production (white) with visual themes
+- **Multi-Environment Architecture**: Dev (green) → QA (yellow) → Production (white/red) with visual themes
 - **Automated CI/CD Pipeline**: automated checks including pytest, security scanning, and deployment
 - **Interactive Dashboard**: Filter, search, and browse adoptable pets with images
 
@@ -44,7 +44,7 @@ This project demonstrates advanced DevOps practices by combining:
 
 ## 🧪 Testing Strategy
 
-Our comprehensive test suite uses **pytest** with mocking for reliable CI/CD:
+Comprehensive test uses **pytest** with mocking for reliable CI/CD:
 
 ```python
 # Example from our test suite
@@ -143,7 +143,7 @@ _white/Red-themed production environment with live data_
 
 ### CI/CD Pipeline
 
-![CI Pipeline](screenshots/ci-pipeline.png)
+![CI Pipeline](assets/Screenshot_ci.png)
 _GitHub Actions CI pipeline with all checks passing_
 
 ![CD Pipeline](assets/Screenshot_cd.png)
@@ -178,5 +178,5 @@ This project demonstrates mastery of:
 
 **🚀 Built with ❤️ for the BeCode Class Challenge - Demonstrating Production-Ready CI/CD Practices**
 
-[![Deploy to Production](https://img.shields.io/badge/Deploy-Production-red?style=for-the-badge&logo=github-actions)](https://github.com/yourusername/challenge-ci-cd-github/actions)
+[![Deploy to Production](https://img.shields.io/badge/Deploy-Production-red?style=for-the-badge&logo=github-actions)](https://github.com/jgchoti/challenge-ci-cd-github/actions)
 [![View Live Demo](https://img.shields.io/badge/View-Live%20Demo-blue?style=for-the-badge&logo=streamlit)](https://pet-adoption-be.streamlit.app/)
