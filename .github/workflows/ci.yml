@@ -6,7 +6,7 @@ on:
     types: [opened, reopened, synchronize]
 
 jobs:
-    lint:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,7 +20,6 @@ jobs:
           pip install flake8
       - name: Lint with flake8
         run: flake8 app tests --max-line-length=88
-
   test:
     runs-on: ubuntu-latest
     steps:
