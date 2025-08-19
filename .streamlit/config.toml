@@ -14,7 +14,13 @@ page_icon = "🐾"
 
 [prod]
 title = "🚀 PetConnect Dashboard"
-background_color = "#f8d7da"
+background_color="white"
 text_color = "#721c24"
 header_color = "#dc3545"
 page_icon = "🐾"
+secondaryBackgroundColor="lavender"
+codeBackgroundColor="powderBlue"
+
+[prod.sidebar]
+background_color="ghostWhite"
+secondaryBackgroundColor="lavender"
