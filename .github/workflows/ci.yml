@@ -25,9 +25,7 @@ jobs:
         run: |
           docker run --rm -v $(pwd):/app -w /app python:3.12-slim bash -c "
             pip install -r requirements.txt &&
+            export PYTHONPATH=/app &&
             if [ -f 'tests/test_app.py' ]; then
               pytest tests/ -v --tb=short
             else
-              echo 'No tests found, skipping'
-            fi
-          "
