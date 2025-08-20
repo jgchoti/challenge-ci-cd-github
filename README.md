@@ -2,7 +2,7 @@
 [![CI](https://github.com/jgchoti/challenge-ci-cd-github/actions/workflows/ci-git.yml/badge.svg)](https://github.com/jgchoti/challenge-ci-cd-github/actions/workflows/ci-git.yml)
 [![CD Pipeline](https://github.com/jgchoti/challenge-ci-cd-github/actions/workflows/cd.yml/badge.svg)](https://github.com/jgchoti/challenge-ci-cd-github/actions/workflows/cd.yml)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 A **real-time pet adoption dashboard** that scrapes data from PetConnect.be, showcasing a complete **DevOps CI/CD pipeline** with automated testing and multi-environment deployments
 
