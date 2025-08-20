@@ -1,8 +1,6 @@
 # 🐾 PetConnect CI/CD Dashboard
 [![CI](https://github.com/jgchoti/challenge-ci-cd-github/actions/workflows/ci-git.yml/badge.svg)](https://github.com/jgchoti/challenge-ci-cd-github/actions/workflows/ci-git.yml)
 [![CD Pipeline](https://github.com/jgchoti/challenge-ci-cd-github/actions/workflows/cd.yml/badge.svg)](https://github.com/jgchoti/challenge-ci-cd-github/actions/workflows/cd.yml)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-
 
 A **real-time pet adoption dashboard** that scrapes data from PetConnect.be, showcasing a complete **DevOps CI/CD pipeline** with automated testing and multi-environment deployments
 
@@ -191,5 +189,4 @@ _Automated PR creation for pushes to any branch except main_
 
 ---
 
-[![Deploy to Production](https://img.shields.io/badge/Deploy-Production-red?style=for-the-badge&logo=github-actions)](https://github.com/jgchoti/challenge-ci-cd-github/actions)
 [![View Live Demo](https://img.shields.io/badge/View-Live%20Demo-blue?style=for-the-badge&logo=streamlit)](https://pet-adoption-be.streamlit.app/)
