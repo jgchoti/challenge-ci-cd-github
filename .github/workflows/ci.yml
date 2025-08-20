@@ -12,10 +12,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Lint with Docker
         run: |
-          docker run --rm -v $(pwd):/app -w /app python:3.12-slim bash -c "
+          docker run --rm -v $(pwd):/app -w /app python:3.12-slim bash -c '
             pip install flake8 &&
             flake8 app tests --max-line-length=2000
-          "
+          '
 
   test:
     runs-on: ubuntu-latest
@@ -23,9 +23,12 @@ jobs:
       - uses: actions/checkout@v4
       - name: Test with Docker
         run: |
-          docker run --rm -v $(pwd):/app -w /app python:3.12-slim bash -c "
+          docker run --rm -v $(pwd):/app -w /app python:3.12-slim bash -c '
             pip install -r requirements.txt &&
             export PYTHONPATH=/app &&
-            if [ -f 'tests/test_app.py' ]; then
+            if [ -f "tests/test_app.py" ]; then
               pytest tests/ -v --tb=short
             else
+              echo "No tests found, skipping"
+            fi
+          '
